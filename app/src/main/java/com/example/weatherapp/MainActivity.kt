@@ -15,13 +15,16 @@ import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
-    val city: String= "Kanpur"
+    var city: String?= null  // Ganganagar
     val API: String= "e0c99aa244528a93f943720d430323c7"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        weatherTask().execute()
+        city= intent.getStringExtra("usercityname")
+        city?.let {
+            weatherTask().execute()
+        }
     }
 
     inner class weatherTask(): AsyncTask<String,Unit, String>(){
@@ -35,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         override fun doInBackground(vararg p0: String?): String? {
             var response: String?
             try{
-                response=  URL("https://api.openweathermap.org/data/2.5/weather?q=$city&units=metric&appid=$API")
+                response=  URL("https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API}")
                     .readText(Charsets.UTF_8)
             }
             catch (e: Exception){
@@ -67,7 +70,6 @@ class MainActivity : AppCompatActivity() {
                 val windspeed= wind.getString("speed")
                 val weatherDescritpion= weather.getString("description")
                 val address= jsonObj.getString("name")+ ","+ sys.getString("country")
-
                 findViewById<TextView>(R.id.address).text= address
                 findViewById<TextView>(R.id.updated).text= updateTextAt
                 findViewById<TextView>(R.id.status).text= weatherDescritpion.capitalize()

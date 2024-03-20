@@ -286,7 +286,7 @@
                     <TextView
                         android:id="@+id/info"
                         android:textSize="14sp"
-                        android:text="Evan"
+                        android:text="Raghu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>

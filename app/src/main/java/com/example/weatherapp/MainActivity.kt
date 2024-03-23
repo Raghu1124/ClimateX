@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
 import org.json.JSONObject
 import java.net.URL
 import java.text.SimpleDateFormat
@@ -48,8 +47,9 @@ class MainActivity : AppCompatActivity() {
             var response: String?
             try {
                 response =
-                    URL("https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API}")
-                        .readText(Charsets.UTF_8)
+                    URL("https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API}").readText(
+                        Charsets.UTF_8
+                    )
             } catch (e: Exception) {
                 response = null
             }
@@ -65,14 +65,15 @@ class MainActivity : AppCompatActivity() {
                 val wind = jsonObj.getJSONObject("wind")
                 val weather = jsonObj.getJSONArray("weather").getJSONObject(0)
                 val updateAt: Long = jsonObj.getLong("dt")
-                val updateTextAt =
-                    "update at : " + SimpleDateFormat("dd/mm/yyyy hh:mm a", Locale.ENGLISH).format(
-                        Date(updateAt * 1000)
-                    )
+                val updateTextAt = "last updated : " + SimpleDateFormat(
+                    "dd/mm/yyyy, hh:mm a", Locale.ENGLISH
+                ).format(
+                    Date(updateAt * 1000)
+                )
 
                 val temp = main.getString("temp") + "°C"
-                val tempMin = "Min Temp" + main.getString("temp_min") + "°C"
-                val tempMax = "Max Temp" + main.getString("temp_max") + "°C"
+                val tempMin = "Min Temp : " + main.getString("temp_min") + "°C"
+                val tempMax = "Max Temp : " + main.getString("temp_max") + "°C"
                 val pressure = main.getString("pressure")
                 val humidity = main.getString("humidity")
                 val sunrise: Long = sys.getLong("sunrise")
@@ -82,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                 val address = jsonObj.getString("name") + "," + sys.getString("country")
                 findViewById<TextView>(R.id.address).text = address
                 findViewById<TextView>(R.id.updated).text = updateTextAt
-                findViewById<TextView>(R.id.status).text = weatherDescritpion.capitalize()
+                findViewById<TextView>(R.id.status).text = weatherDescritpion
                 findViewById<TextView>(R.id.temp).text = temp
                 findViewById<TextView>(R.id.temp_min).text = tempMin
                 findViewById<TextView>(R.id.temp_max).text = tempMax

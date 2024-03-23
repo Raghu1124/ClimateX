@@ -74,7 +74,7 @@
                     android:text="Min Temp" />
 
                 <Space
-                    android:layout_width="50dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content" />
 
                 <TextView
@@ -122,7 +122,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sunrise"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/sunrise"
@@ -159,7 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sunset"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/sunset"
@@ -196,7 +196,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Wind"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/wind"
@@ -245,7 +245,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pressure"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/pressure"
@@ -282,7 +282,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Humidity"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/humidity"
@@ -319,7 +319,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Created By"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/info"
@@ -351,6 +351,5 @@
         android:layout_centerInParent="true"
         android:text="Something went wrong"
         android:visibility="gone" />
-
 
 </RelativeLayout>

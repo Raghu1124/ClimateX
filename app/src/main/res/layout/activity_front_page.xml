@@ -6,36 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".FrontPage">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="9dp"
+        android:orientation="horizontal"
+        android:paddingTop="500dp">
 
-        <EditText
-            android:id="@+id/cityName"
-            android:layout_width="350dp"
-            android:layout_height="52dp"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:hint="Enter city name"
-            android:textColorHint="@color/hintcolor" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="6dp"
+            android:paddingEnd="3dp">
 
-        <Button
+            <EditText
+                android:id="@+id/cityName"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:inputType="text"
+                android:background="@drawable/namebg"
+                android:hint="Enter city name"
+                android:paddingStart="19dp"
+                android:paddingEnd="19dp"
+                android:textColorHint="@color/hintcolor"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:paddingEnd="5dp">
+
+            <ImageButton
+                android:id="@+id/submitbtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/searchbtnbg"
+                android:src="@drawable/searchicon"
+                android:contentDescription="submit"/>
+        </RelativeLayout>
+
+
+        <!--<Button
             android:id="@+id/submitbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="end"
+            android:layout_marginRight="25dp"
             android:text="Submit"
-            android:textSize="20dp"
             android:textColor="@color/white"
-            android:layout_gravity="right"
-            android:layout_marginRight="25dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="@color/black"/> -->
     </LinearLayout>
-
 </RelativeLayout>

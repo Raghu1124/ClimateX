@@ -16,11 +16,12 @@ class FrontPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_front_page)
 
-        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
-        setSupportActionBar(toolbar)
+//        Action Bar
+//        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+//        setSupportActionBar(toolbar)
 
         val cityName = findViewById<EditText>(R.id.cityName)
-        val submitbtn = findViewById<ImageButton>(R.id.submitbtn)
+        val submitbtn = findViewById<Button>(R.id.submitbtn)
 
         submitbtn.setOnClickListener {
             if (cityName.text.toString().isEmpty()) {

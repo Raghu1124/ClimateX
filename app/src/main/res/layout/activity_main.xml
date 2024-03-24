@@ -15,19 +15,27 @@
         android:layout_height="match_parent"
         android:visibility="visible">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="1.0"
+            android:src="@drawable/mainbg" />
+
         <LinearLayout
             android:id="@+id/addressContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="15dp">
 
             <TextView
                 android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Demo"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/updated"
@@ -41,7 +49,7 @@
             android:id="@+id/overviewContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:paddingTop="300dp"
             android:orientation="vertical">
 
             <TextView
@@ -49,8 +57,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Rain"
-                android:textSize="18sp" />
+                android:text="Season"
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/temp"
@@ -59,6 +67,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-thin"
                 android:text="29°C"
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:textSize="80sp" />
 
             <LinearLayout
@@ -94,16 +104,16 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:weightSum="2">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#3CF1EBF1"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="8dp">
@@ -122,6 +132,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sunrise"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <TextView
@@ -129,18 +140,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5:30 AM"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
                 </LinearLayout>
 
                 <Space
-                    android:layout_width="10dp"
+                    android:layout_width="58dp"
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#3CF1EBF1"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="8dp">
@@ -159,6 +170,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sunset"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <TextView
@@ -166,55 +178,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5:30 AM"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
                 </LinearLayout>
-
-                <Space
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#3CF1EBF1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/wind"
-                        app:tint="#FFFFFF" />
-
-                    <Space
-                        android:layout_width="5dp"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Wind"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/wind"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="5:30 AM"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <Space
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content" />
-
             </LinearLayout>
 
             <Space
                 android:layout_width="wrap_content"
-                android:layout_height="10dp" />
+                android:layout_height="8dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -226,7 +197,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#3CF1EBF1"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="8dp">
@@ -245,6 +215,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pressure"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <TextView
@@ -252,6 +223,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5:30 AM"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -263,7 +235,44 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#3CF1EBF1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/wind"
+                        app:tint="#FFFFFF" />
+
+                    <Space
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wind"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/wind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5:30 AM"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="8dp">
@@ -282,6 +291,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Humidity"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <TextView
@@ -289,50 +299,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5:30 AM"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
                 </LinearLayout>
-
-                <Space
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#3CF1EBF1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/info"
-                        app:tint="#FFFFFF" />
-
-                    <Space
-                        android:layout_width="5dp"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Created By"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/info"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Raghu"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <Space
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content" />
-
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

@@ -1,8 +1,10 @@
 package com.example.weatherapp
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -16,9 +18,10 @@ class FrontPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_front_page)
 
-//        Action Bar
-//        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
-//        setSupportActionBar(toolbar)
+//        for top action bar
+        setStatusBarColor(getColor(R.color.black))
+//        for bottom action bar
+        setWindowNavigationBarColor(getColor(R.color.black))
 
         val cityName = findViewById<EditText>(R.id.cityName)
         val submitbtn = findViewById<Button>(R.id.submitbtn)
@@ -35,5 +38,20 @@ class FrontPage : AppCompatActivity() {
 
             }
         }
+    }
+
+    private fun setWindowNavigationBarColor(color: Int) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            window.navigationBarColor = color
+//        } else {
+//            val decorView = window.decorView
+//            decorView.systemUiVisibility = decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+//        }
+    }
+
+    private fun setStatusBarColor(color: Int) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = color
+//        }
     }
 }

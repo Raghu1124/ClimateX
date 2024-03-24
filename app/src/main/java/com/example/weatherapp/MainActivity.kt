@@ -1,6 +1,7 @@
 package com.example.weatherapp
 
 import android.os.AsyncTask
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,18 +22,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        for action bar
-
-//        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
-//        setSupportActionBar(toolbar)
-//        val actionBarHeight = supportActionBar?.height?:0
-//        val padding = resources.getDimensionPixelSize(R.dimen.)
-//        findViewById<View>(android.R.id.content).setPadding(0, actionBarHeight, 0, 0)
+//        for top action bar
+        setStatusBarColor(getColor(R.color.black))
+//        for bottom action bar
+        setWindowNavigationBarColor(getColor(R.color.black))
 
         city = intent.getStringExtra("usercityname")
         city?.let {
             weatherTask().execute()
         }
+    }
+
+    private fun setWindowNavigationBarColor(color: Int) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            window.navigationBarColor = color
+//        } else {
+//            val decorView = window.decorView
+//            decorView.systemUiVisibility = decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+//        }
+    }
+
+    private fun setStatusBarColor(color: Int) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = color
+//        }
     }
 
     inner class weatherTask() : AsyncTask<String, Unit, String>() {
@@ -65,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                 val wind = jsonObj.getJSONObject("wind")
                 val weather = jsonObj.getJSONArray("weather").getJSONObject(0)
                 val updateAt: Long = jsonObj.getLong("dt")
-                val updateTextAt = "last updated : " + SimpleDateFormat(
+                val updateTextAt = "Last updated : " + SimpleDateFormat(
                     "dd/mm/yyyy, hh:mm a", Locale.ENGLISH
                 ).format(
                     Date(updateAt * 1000)
@@ -80,10 +93,10 @@ class MainActivity : AppCompatActivity() {
                 val sunset: Long = sys.getLong("sunset")
                 val windspeed = wind.getString("speed")
                 val weatherDescritpion = weather.getString("description")
-                val address = jsonObj.getString("name") + "," + sys.getString("country")
+                val address = jsonObj.getString("name") + ", " + sys.getString("country")
                 findViewById<TextView>(R.id.address).text = address
                 findViewById<TextView>(R.id.updated).text = updateTextAt
-                findViewById<TextView>(R.id.status).text = weatherDescritpion
+                findViewById<TextView>(R.id.status).text = weatherDescritpion.capitalize(Locale.ROOT)
                 findViewById<TextView>(R.id.temp).text = temp
                 findViewById<TextView>(R.id.temp_min).text = tempMin
                 findViewById<TextView>(R.id.temp_max).text = tempMax

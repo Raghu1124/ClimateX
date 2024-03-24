@@ -59,7 +59,3 @@ Connect with fellow weather enthusiasts and contributors by joining the ClimateX
 ### Let's Get Started!
 
 Experience the power of ClimateX and take control of your weather forecasts today. Whether you're planning a weekend getaway or simply want to stay informed about local conditions, ClimateX has you covered. Join us on this exciting journey as we revolutionize the way you interact with weather data.
-
----
-
-Feel free to adjust the content further if needed!

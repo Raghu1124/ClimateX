@@ -54,6 +54,7 @@
                 android:id="@+id/cityName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/namebg"
                 android:hint="Enter your city or state name"

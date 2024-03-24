@@ -1,5 +1,11 @@
 # Welcome to ClimateX 🌦️
 
+![Demo Photo](pic2.jpg)
+
+![Demo Photo](pic1.jpg)
+
+![Demo Video](vid1.mp4)
+
 ### Your Ultimate Weather Companion
 
 Looking for an intuitive weather forecasting app that keeps you informed about weather conditions, temperature trends, pressure, humidity, and more? Look no further than ClimateX!

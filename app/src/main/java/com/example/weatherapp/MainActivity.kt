@@ -17,7 +17,7 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
 
     var city: String? = null  // Ganganagar
-    val API: String = "e0c99aa244528a93f943720d430323c7"
+    val API= BuildConfig.apiKey
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         city = intent.getStringExtra("usercityname")
         city?.let {
-            weatherTask().execute()
+            weatherTask()
         }
     }
 
